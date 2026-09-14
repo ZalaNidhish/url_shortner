@@ -1,10 +1,12 @@
 import express from "express"
+import cors from 'cors'
 export const app = express();
 import urlRouter from './routes/url.routes.js'
 import authRouter from './routes/auth.routes.js'
 import { urlModel } from "./models/url.model.js";
 
 app.use(express.json())
+app.use(cors())
 
 app.get("/", (req, res)=>{
     res.send("Hello world ... ")
